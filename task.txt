@@ -1,0 +1,5 @@
+Task#1
+1. create a project folder with name(ecommerce)
+2. setup the pages(items,categories)
+3. add bootstrap with these pages
+4. create two tables(categories, items)

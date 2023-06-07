@@ -18,6 +18,7 @@ if(isset($_POST['submit'])){
 
 
 <div class="container">
+    
     <h2>Add new blog</h2>
     <div class="card">
         <div class="card-body">
