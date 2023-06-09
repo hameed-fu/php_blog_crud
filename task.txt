@@ -3,3 +3,9 @@ Task#1
 2. setup the pages(items,categories)
 3. add bootstrap with these pages
 4. create two tables(categories, items)
+
+Task#2
+1. create fresh new project again
+2. create categories and items pages 
+3. create database and two tables(categories, items)
+4. insert some data in both tables and show the data in pages

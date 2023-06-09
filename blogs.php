@@ -1,52 +1,42 @@
 <?php
 include('layouts/header.php');
 include('connection.php');
+
+$sql = "SELECT * FROM blogs";
+
+$result = mysqli_query($connection, $sql);
+ 
 ?>
 <div class="container">
     <h2>Blogs</h2>
     <a href="add_blog.php" class='btn btn-primary mb-2'>Add new</a>
     <div class="row">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-body">
-                    <h2>Blog one</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur illo consectetur tenetur vitae dolorem facilis enim eligendi, nesciunt atque. Doloremque quos deleniti commodi distinctio placeat minima, delectus nisi! Rerum, reprehenderit.
-                    </p>
-                    <a href="" class="btn btn-warning">Edit</a>
-                    <a href="" class="btn btn-danger">Delete</a>
-                </div>
-            </div>
+        <table class="table table-hover">
+            <tr>
+            <th>No</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Action</th>
+            </tr>
+            <?php
+            $sno = 0 ;
+             while($row = mysqli_fetch_assoc($result)){
+            $sno++;
+            ?>
+            <tr>
+                <td><?php echo $sno ?></td>
+                <td><?php echo $row['title'] ?></td>
+                <td><?php echo $row['description'] ?></td>
+                <td>
+                    <a href="" class="btn btn-sm btn-warning">Edit</a>
+                    <a href="" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
 
-        </div>
-
-        <div class="col-md-12 mt-1">
-            <div class="card">
-                <div class="card-body">
-                    <h2>Blog one</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur illo consectetur tenetur vitae dolorem facilis enim eligendi, nesciunt atque. Doloremque quos deleniti commodi distinctio placeat minima, delectus nisi! Rerum, reprehenderit.
-                    </p>
-                    <a href="" class="btn btn-warning">Edit</a>
-                    <a href="" class="btn btn-danger">Delete</a>
-                </div>
-            </div>
-
-        </div>
-        <div class="col-md-12 mt-1">
-            <div class="card">
-                <div class="card-body">
-                    <h2>Blog one</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur illo consectetur tenetur vitae dolorem facilis enim eligendi, nesciunt atque. Doloremque quos deleniti commodi distinctio placeat minima, delectus nisi! Rerum, reprehenderit.
-                    </p>
-                    <a href="" class="btn btn-warning">Edit</a>
-                    <a href="" class="btn btn-danger">Delete</a>
-                </div>
-            </div>
-
-        </div>
-
+            <?php 
+            }
+             ?>
+        </table>
         
     </div>
 </div>
