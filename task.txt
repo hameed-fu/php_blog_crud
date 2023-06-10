@@ -9,3 +9,7 @@ Task#2
 2. create categories and items pages 
 3. create database and two tables(categories, items)
 4. insert some data in both tables and show the data in pages
+
+Task#3
+1. Show the data in pages
+2. add delete query in each pages

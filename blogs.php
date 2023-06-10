@@ -5,6 +5,17 @@ include('connection.php');
 $sql = "SELECT * FROM blogs";
 
 $result = mysqli_query($connection, $sql);
+
+
+if(isset($_GET['id'])){
+    $id = $_GET['id'];
+    
+    $sql1 = "DELETE FROM blogs WHERE id=$id";
+    $result1 = mysqli_query($connection, $sql1);
+    header("Location: blogs.php");
+}   
+
+
  
 ?>
 <div class="container">
@@ -29,7 +40,7 @@ $result = mysqli_query($connection, $sql);
                 <td><?php echo $row['description'] ?></td>
                 <td>
                     <a href="" class="btn btn-sm btn-warning">Edit</a>
-                    <a href="" class="btn btn-sm btn-danger">Delete</a>
+                    <a href="?id=<?php echo $row['id'] ?>" class="btn btn-sm btn-danger">Delete</a>
                 </td>
             </tr>
 

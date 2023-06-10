@@ -9,6 +9,7 @@ if(isset($_POST['submit'])){
     $sql = "INSERT INTO blogs(title,description) values('$title','$description')";
     if(mysqli_query($connection,$sql)){
         echo "blog added successfully";
+        header("Location: blogs.php");
     }else{
         echo "Something went wrong";
     }
