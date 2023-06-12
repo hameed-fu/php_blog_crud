@@ -1,4 +1,5 @@
 <?php
+session_start();
 include('layouts/header.php');
 include('connection.php');
 
@@ -8,7 +9,7 @@ if(isset($_POST['submit'])){
     
     $sql = "INSERT INTO blogs(title,description) values('$title','$description')";
     if(mysqli_query($connection,$sql)){
-        echo "blog added successfully";
+        $_SESSION['success'] = 'Blog added successfully!';
         header("Location: blogs.php");
     }else{
         echo "Something went wrong";

@@ -1,4 +1,5 @@
 <?php
+session_start();
 include('layouts/header.php');
 include('connection.php');
 
@@ -21,6 +22,13 @@ if(isset($_GET['id'])){
 <div class="container">
     <h2>Blogs</h2>
     <a href="add_blog.php" class='btn btn-primary mb-2'>Add new</a>
+     <?php
+        if (isset($_SESSION['success'])) { ?>
+           <div class="alert alert-primary"><?php  echo $_SESSION['success']; ?></div>
+    <?php
+            unset($_SESSION['success']);
+        }
+     ?>
     <div class="row">
         <table class="table table-hover">
             <tr>
@@ -39,8 +47,8 @@ if(isset($_GET['id'])){
                 <td><?php echo $row['title'] ?></td>
                 <td><?php echo $row['description'] ?></td>
                 <td>
-                    <a href="" class="btn btn-sm btn-warning">Edit</a>
-                    <a href="?id=<?php echo $row['id'] ?>" class="btn btn-sm btn-danger">Delete</a>
+                    <a href="edit.php?id=<?php echo $row['id'] ?>" class="btn btn-sm btn-warning">Edit</a>
+                    <a onclick="return confirm('are you sure?')" href="?id=<?php echo $row['id'] ?>" class="btn btn-sm btn-danger">Delete</a>
                 </td>
             </tr>
 

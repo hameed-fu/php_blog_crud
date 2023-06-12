@@ -13,3 +13,8 @@ Task#2
 Task#3
 1. Show the data in pages
 2. add delete query in each pages
+
+Task#4
+1. add colunms in categoreid(id, name) - fetch the data
+2. add colunms in items(id, name, price, description, category_id) - fetch the data
+3. Perform CRUD in both tables
