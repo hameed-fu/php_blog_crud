@@ -5,7 +5,6 @@ include('connection.php');
 
 if(isset($_GET['id'])){
     $id = $_GET['id'];
-     
     
     $sql = "SELECT * FROM blogs where id = '$id'";
     $result = mysqli_query($connection,$sql);

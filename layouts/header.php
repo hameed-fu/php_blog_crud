@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,10 +30,13 @@
       </li>
        
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    
+    <?php if($_SESSION['id']) { ?>
+    <strong class='text-white mr-4'><?php echo $_SESSION['name']?></strong>
+    <a href="logout.php" class="btn btn-outline-danger my-2 my-sm-0" type="submit">Logout</a>
+    <?php }else{ ?>
+    <a href="login.php" class="btn btn-outline-primary my-2 my-sm-0" >Login</a>
+    <?php }?>
   </div>
 </nav>
 

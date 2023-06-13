@@ -18,3 +18,8 @@ Task#4
 1. add colunms in categoreid(id, name) - fetch the data
 2. add colunms in items(id, name, price, description, category_id) - fetch the data
 3. Perform CRUD in both tables
+
+Task#5
+1. Create login page
+2. put email and password, redirect to items list
+3. Make sure put any account details in db

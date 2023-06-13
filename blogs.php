@@ -1,5 +1,10 @@
 <?php
 session_start();
+
+if(!$_SESSION['id']){
+    header("Location: login.php");
+}
+
 include('layouts/header.php');
 include('connection.php');
 
@@ -23,12 +28,15 @@ if(isset($_GET['id'])){
     <h2>Blogs</h2>
     <a href="add_blog.php" class='btn btn-primary mb-2'>Add new</a>
      <?php
-        if (isset($_SESSION['success'])) { ?>
-           <div class="alert alert-primary"><?php  echo $_SESSION['success']; ?></div>
+        if (isset($_SESSION['success'])) { 
+    ?>
+        <div class="alert alert-primary"><?php  echo $_SESSION['success']; ?></div>
     <?php
-            unset($_SESSION['success']);
+        unset($_SESSION['success']);
+        
         }
-     ?>
+    ?>
+     
     <div class="row">
         <table class="table table-hover">
             <tr>
